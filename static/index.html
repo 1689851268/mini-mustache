@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>index.html</h1>
+    <div id="container"></div>
+
+    <!-- 注意: 这里是引入打包后的文件 -->
+    <script src="./virtual/bundle.js"></script>
+
+    <script>
+        const templateStr = `
+            <div class="container">
+                <ol>
+                    {{#students}}
+                    <li>{{name}}的爱好是</li>
+                    <ol>
+                        {{#hobbies}}
+                        <li>{{.}}</li>
+                        {{/hobbies}}
+                    </ol>
+                    {{/students}}
+                </ol>
+            </div>
+        `;
+
+        const data = {
+            students: [
+                { 'name': '小明', 'hobbies': ["游泳", "健身"] },
+                { 'name': '小红', 'hobbies': ["篮球", "篮球", "羽毛球"] },
+                { 'name': '小强', 'hobbies': ["吃饭", "睡觉"] },
+            ]
+        };
+
+        container.innerHTML = CR_mustache.render(templateStr, data);
+    </script>
+</body>
+
+</html>

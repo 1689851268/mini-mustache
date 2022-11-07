@@ -1,0 +1,14 @@
+{
+    "name": "mini-mustache",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "webpack-dev-server"
+    },
+    "devDependencies": {
+        "webpack": "4",
+        "webpack-cli": "3",
+        "webpack-dev-server": "3"
+    }
+}
